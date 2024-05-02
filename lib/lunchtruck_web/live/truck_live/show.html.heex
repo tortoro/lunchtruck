@@ -1,8 +1,11 @@
 <.header>
   <%= @truck.name %>
   <:subtitle>
-    <.link href={"https://www.google.com/maps/search/?api=1&query=#{URI.encode(@truck.address) |> String.replace("+", "%20")}+San+Francisco"} target="_blank">
-      <%= @truck.address %>
+    <.link
+      class="hover:brightness-75"
+      href={"https://www.google.com/maps/search/?api=1&query=#{URI.encode(@truck.address) |> String.replace("+", "%20")}+San+Francisco"}
+      target="_blank">
+      <%= @truck.address %> - Show on Google Maps
     </.link>
   </:subtitle>
   <:actions>
