@@ -1,6 +1,6 @@
 <.header>
-  Truck <%= @truck.id %>
-  <:subtitle>This is a truck record from your database.</:subtitle>
+  <%= @truck.name %>
+  <:subtitle><%= @truck.address %></:subtitle>
   <:actions>
     <.link patch={~p"/trucks/#{@truck}/show/edit"} phx-click={JS.push_focus()}>
       <.button>Edit truck</.button>
@@ -9,7 +9,7 @@
 </.header>
 
 <.list>
-  <:item title="Name"><%= @truck.name %></:item>
+  <:item title="Food Items/Offerings"><%= @truck.details %></:item>
 </.list>
 
 <.back navigate={~p"/trucks"}>Back to trucks</.back>

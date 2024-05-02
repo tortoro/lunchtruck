@@ -9,7 +9,6 @@ defmodule LunchtruckWeb.TruckLive.FormComponent do
     <div>
       <.header>
         <%= @title %>
-        <:subtitle>Use this form to manage truck records in your database.</:subtitle>
       </.header>
 
       <.simple_form
@@ -20,6 +19,8 @@ defmodule LunchtruckWeb.TruckLive.FormComponent do
         phx-submit="save"
       >
         <.input field={@form[:name]} type="text" label="Name" />
+        <.input field={@form[:address]} type="text" label="Location" />
+        <.input field={@form[:details]} type="text" label="Details" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Truck</.button>
         </:actions>

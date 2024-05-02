@@ -13,6 +13,8 @@
   row_click={fn {_id, truck} -> JS.navigate(~p"/trucks/#{truck}") end}
 >
   <:col :let={{_id, truck}} label="Name"><%= truck.name %></:col>
+  <:col :let={{ _id, truck}} label="Details"><%= truck.details %></:col>
+  <:col :let={{ _id, truck}} label="Address"><%= truck.address %></:col>
   <:action :let={{_id, truck}}>
     <div class="sr-only">
       <.link navigate={~p"/trucks/#{truck}"}>Show</.link>
@@ -29,7 +31,12 @@
   </:action>
 </.table>
 
-<.modal :if={@live_action in [:new, :edit]} id="truck-modal" show on_cancel={JS.patch(~p"/trucks")}>
+<.modal
+  :if={@live_action in [:new, :edit]}
+  id="truck-modal"
+  show
+  on_cancel={JS.patch(~p"/trucks")}
+>
   <.live_component
     module={LunchtruckWeb.TruckLive.FormComponent}
     id={@truck.id || :new}
