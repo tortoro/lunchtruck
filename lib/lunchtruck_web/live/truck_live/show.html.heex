@@ -1,6 +1,10 @@
 <.header>
   <%= @truck.name %>
-  <:subtitle><%= @truck.address %></:subtitle>
+  <:subtitle>
+    <.link href={"https://www.google.com/maps/search/?api=1&query=#{URI.encode(@truck.address) |> String.replace("+", "%20")}+San+Francisco"} target="_blank">
+      <%= @truck.address %>
+    </.link>
+  </:subtitle>
   <:actions>
     <.link patch={~p"/trucks/#{@truck}/show/edit"} phx-click={JS.push_focus()}>
       <.button>Edit truck</.button>
