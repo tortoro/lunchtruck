@@ -1,5 +1,9 @@
 # Lunchtruck
 
+For now I am approaching this project from the perspective of building an internal administrative tool for San Francisco's food trucks.
+Imagining the user is someone who can benefit from a system pulling in various food truck data from APIs and consolidating it into a
+source of truth index for the City to keep track of operating food trucks.
+
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
